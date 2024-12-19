@@ -1,0 +1,30 @@
+services:
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: soldify
+      POSTGRES_USER: soldifyuser
+      POSTGRES_PASSWORD: soldifypassword
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - solidify_network
+
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    networks:
+      - solidify_network
+
+volumes:
+  postgres_data:
+
+networks:
+  solidify_network:
+    driver: bridge
