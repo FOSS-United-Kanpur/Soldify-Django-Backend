@@ -1,0 +1,59 @@
+# Python bytecode files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+ENV/
+.venv/
+*.egg-info/
+
+# Pytest cache and coverage
+.pytest_cache/
+.coverage
+coverage.xml
+*.cover
+
+# Django specific
+*.log
+db.sqlite3
+media/
+staticfiles/
+.DS_Store
+
+# Secrets and configurations
+*.env
+.env.*
+config.yaml
+
+# IDE specific
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# System files
+*.swp
+*.swo
+Thumbs.db
+Desktop.ini
+
+# Docker and containers
+docker-compose.override.yml
+*.pid
+*.sock
+
+# Celery beat and results
+celerybeat-schedule
+
+# Node modules (for frontend dependencies if applicable)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Compiled code and caches
+*.dll
+*.so
+*.dylib
